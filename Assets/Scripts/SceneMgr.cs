@@ -74,4 +74,9 @@ public class SceneMgr : MonoBehaviour
         float totalDrainRateBuildingMats = initialBuildingMats - buildingMats;
         float totalDrainRateWaste = initialWaste - waste;
     }
+
+
+    public static void SetTickMultiplier(float newTickMultiplier) {
+        singleton.tickMultiplier = newTickMultiplier;
+    }
 }
