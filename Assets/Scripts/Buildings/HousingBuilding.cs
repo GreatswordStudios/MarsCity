@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HousingBuilding : Building
 {
-    public override void Tick() {
+    public void Tick() {
         Dictionary<string, float> drain = SceneMgr.housingDrain;
         SceneMgr sceneMgr = SceneMgr.singleton;
 

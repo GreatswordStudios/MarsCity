@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSpacePrefab: {fileID: 8869624887882877518, guid: 2d19437502635084b8e85730dbe21bec, type: 3}
+  carriedBuilding: {fileID: 1961979816}
 --- !u!4 &1061575888
 Transform:
   m_ObjectHideFlags: 0

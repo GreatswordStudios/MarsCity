@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Building: MonoBehaviour
+public interface Building
 {
-    public abstract void Tick();
+    public void Tick();
 }

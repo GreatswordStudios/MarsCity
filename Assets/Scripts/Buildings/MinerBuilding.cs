@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MinerBuilding: Building
 {
-    public override void Tick() {
+    public void Tick() {
         Dictionary<string, float> drain = SceneMgr.minerDrain;
         SceneMgr sceneMgr = SceneMgr.singleton;
 
