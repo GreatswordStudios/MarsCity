@@ -18,6 +18,7 @@ public class SceneMgr : MonoBehaviour
     public float buildingMats = 0;
     public float waste = 0;
     public float population = 0;
+    public float availableWorkforce = 0;
 
     public float totalDrainRateWater = 0;
     public float totalDrainRateElec = 0;
@@ -63,6 +64,7 @@ public class SceneMgr : MonoBehaviour
         float initialBiomass = biomass;
         float initialBuildingMats = buildingMats;
         float initialWaste = waste;
+        float availableWorkforce = population;
 
         // flatten buildings array so we can randomize execution order
         List<Building> flattenedBuildings = new List<Building>();
