@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class SceneMgr : MonoBehaviour
 {
-    static SceneMgr singleton;
+    public static SceneMgr singleton;
 
     Building[] buildings;
 
-    float water = 0;
-    float elec = 0;
-    float oxygen = 0;
-    float biomass = 0;
-    float buildingMats = 0;
+    public float water = 0;
+    public float elec = 0;
+    public float oxygen = 0;
+    public float biomass = 0;
+    public float buildingMats = 0;
 
-    float totalDrainRateWater = 0;
-    float totalDrainRateElec = 0;
-    float totalDrainRateOxygen = 0;
-    float totalDrainRateBiomass = 0;
-    float totalDrainRateBuildingMats = 0;
+    public float totalDrainRateWater = 0;
+    public float totalDrainRateElec = 0;
+    public float totalDrainRateOxygen = 0;
+    public float totalDrainRateBiomass = 0;
+    public float totalDrainRateBuildingMats = 0;
 
     double tickTime = 1; // time in sec between ticks at normal speed
     double timeSinceLastTick = 0;
     double tickMultiplier = 1.0; 
 
     // GAME DESIGN VARIABLES
-    static Dictionary<string, float> greenhouseDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> greenhouseDrain = new Dictionary<string, float>(){
             { "water", 10 },
             { "elec", 5 },
             { "oxygen", -20 },
@@ -33,7 +33,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         };
 
-    static Dictionary<string, float> solarDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> solarDrain = new Dictionary<string, float>(){
             { "water", 0 },
             { "elec", -20 },
             { "oxygen", 0 },
@@ -41,7 +41,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         };
      
-    static Dictionary<string, float> wasteProcessDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> wasteProcessDrain = new Dictionary<string, float>(){
             { "water", -20 },
             { "elec", 10 },
             { "oxygen", 0 },
@@ -49,7 +49,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         }; 
      
-    static Dictionary<string, float> nuclearDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> nuclearDrain = new Dictionary<string, float>(){
             { "water", 10 },
             { "elec", 5 },
             { "oxygen", -20 },
@@ -57,7 +57,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         }; 
      
-    static Dictionary<string, float> minerDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> minerDrain = new Dictionary<string, float>(){
             { "water", 10 },
             { "elec", 5 },
             { "oxygen", -20 },
@@ -65,7 +65,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         }; 
      
-    static Dictionary<string, float> housingDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> housingDrain = new Dictionary<string, float>(){
             { "water", 10 },
             { "elec", 5 },
             { "oxygen", -20 },
@@ -73,7 +73,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         }; 
      
-    static Dictionary<string, float> researchDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> researchDrain = new Dictionary<string, float>(){
             { "water", 10 },
             { "elec", 5 },
             { "oxygen", -20 },
@@ -81,7 +81,7 @@ public class SceneMgr : MonoBehaviour
             { "buildingMats", 0 }
         }; 
      
-    static Dictionary<string, float> landingDrain = new Dictionary<string, float>(){
+    public static Dictionary<string, float> landingDrain = new Dictionary<string, float>(){
             { "water", 0 },
             { "elec", 0 },
             { "oxygen", 0 },
