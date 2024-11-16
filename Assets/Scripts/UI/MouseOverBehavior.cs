@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class MouseOverBehavior : MonoBehaviour
+public class MouseOverBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public void OnPointerExit(PointerEventData eventData) {
+        Utils.mouseOverUI = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnPointerEnter(PointerEventData eventData) {
+        Utils.mouseOverUI = true;
     }
 }

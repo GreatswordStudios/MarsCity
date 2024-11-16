@@ -35,6 +35,9 @@ public class GridManager : MonoBehaviour
     }
     
     void Update() {
+        if(Utils.IsMouseOverUI()) {
+            return;
+        }
         // Get the gridspace in which the mouse is over
         Vector3 mousePos = Input.mousePosition;
         Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
