@@ -1,4 +1,6 @@
-public interface Building : MonoBehaviour
+using UnityEngine;
+
+public abstract class Building: MonoBehaviour
 {
-    
+    public abstract void Tick();
 }
