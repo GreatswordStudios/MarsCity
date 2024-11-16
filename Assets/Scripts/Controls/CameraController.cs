@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     double movementMult = 60;
     double fastMovementMult = 150;
-    double zoomMult = 8.0;
+    double zoomMult = 80.0;
 
     float minZoom = 10;
     float maxZoom = 100;
