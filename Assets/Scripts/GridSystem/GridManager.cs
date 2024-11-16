@@ -18,7 +18,7 @@ public class GridManager : MonoBehaviour
     void SpawnGrid() {
         for(int i = 0; i < (int) SceneMgr.gridSize.y; i++) {
             for(int j = 0; j < (int) SceneMgr.gridSize.x; j++) {
-                GameObject spawnedSpace = Instantiate(gridSpacePrefab, this.transform.position + new Vector3(gridSize * i, gridSize * j, 0), Quaternion.identity);
+                GameObject spawnedSpace = Instantiate(gridSpacePrefab, this.transform.position + new Vector3(gridSize * i, 0, gridSize * j), Quaternion.identity);
                 spawnedSpace.transform.parent = this.transform;
                 spawnedSpace.name = "GridSpace(" + i + "," + j + ")";
                 grid[i, j] = spawnedSpace;
