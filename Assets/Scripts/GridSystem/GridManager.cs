@@ -46,11 +46,16 @@ public class GridManager : MonoBehaviour
 
         // code if a building is currently being carried
         if(carriedBuilding != null) {
+
             GameObject gridSpace = grid[(int) selectedSpace.x, (int) selectedSpace.y];
             carriedBuilding.transform.position = gridSpace.transform.position;
             
             if(BuildingCanBePlaced(selectedSpace)) {
-                if(Input.GetMouseButtonDown(0)) {
+                if(Input.GetMouseButtonDown(1)) { // cancel placement
+                    Destroy(carriedBuilding);
+                    carriedBuilding = null;
+                }
+                else if(Input.GetMouseButtonDown(0)) { // attempt to place
                     carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.white; // set msterial back to normal
 
                     SceneMgr.singleton.buildings[(int) selectedSpace.x, (int) selectedSpace.y] = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
@@ -59,7 +64,7 @@ public class GridManager : MonoBehaviour
                     carriedBuilding.transform.parent = gridSpace.transform;
                     carriedBuilding = null; // remove building (visual) from our control
                 }
-                else {
+                else { // no action being done
                     carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.green;
                 }
             }
