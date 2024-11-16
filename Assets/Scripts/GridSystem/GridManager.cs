@@ -6,10 +6,13 @@ public class GridManager : MonoBehaviour
 {   
     public static GridManager singleton;
     public GameObject gridSpacePrefab;
-    public GameObject carriedBuilding;
-    const float gridSize = 1.0f; // spacing between GridSpaces
+    const float gridSize = 10; // spacing between GridSpaces
 
     GameObject[,] grid = new GameObject[(int) SceneMgr.gridSize.y, (int) SceneMgr.gridSize.x];
+
+    public GameObject carriedBuilding; // visual representation of the carried building
+    public BuildingType carriedBuildingType; // the building type we are carrying
+    Vector2 selectedSpace = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +33,13 @@ public class GridManager : MonoBehaviour
     }
     
     void Update() {
+        // Get the gridspace in which the mouse is over
         Vector3 mousePos = Input.mousePosition;
         Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
-        Vector2 selectedSpace = Vector2.zero;
-
         for(int i = 0; i < grid.GetLength(0); i++) {
             for(int j = 0; j < grid.GetLength(1); j++) {
                 if(grid[i, j].GetComponent<Collider>().bounds.IntersectRay(mouseRay)){
                     selectedSpace = new Vector2(i, j);
-
-                    //grid[i, j].GetComponent<MeshRenderer>().material.color = Color.red;
                 }
             }
         }
@@ -51,14 +51,13 @@ public class GridManager : MonoBehaviour
             
             if(BuildingCanBePlaced(selectedSpace)) {
                 if(Input.GetMouseButtonDown(0)) {
-                    carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.white;
-                    //gridSpace.GetComponent<MeshRenderer>().material.color = Color.red;
-                    SceneMgr.singleton.buildings[(int) selectedSpace.x, (int) selectedSpace.y] = new GreenhouseBuilding();
+                    carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.white; // set msterial back to normal
 
-                    carriedBuilding.transform.position = gridSpace.transform.position;
+                    SceneMgr.singleton.buildings[(int) selectedSpace.x, (int) selectedSpace.y] = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
+
                     gridSpace.GetComponent<GridSpace>().buildingObject = carriedBuilding;
                     carriedBuilding.transform.parent = gridSpace.transform;
-                    carriedBuilding = null;
+                    carriedBuilding = null; // remove building (visual) from our control
                 }
                 else {
                     carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.green;
@@ -77,5 +76,41 @@ public class GridManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    Building CreateBuildingFromEnum(BuildingType buildingType) {
+        Building returnBuilding;
+        switch(buildingType){
+            case BuildingType.GREENHOUSE:
+                returnBuilding = new GreenhouseBuilding();
+                break;
+            case BuildingType.SOLAR:
+                returnBuilding = new SolarBuilding();
+                break;
+            case BuildingType.WASTEPROCESS:
+                returnBuilding = new WasteProcessBuilding();
+                break;
+            case BuildingType.NUCLEAR:
+                returnBuilding = new NuclearBuilding();
+                break;
+            case BuildingType.MINER:
+                returnBuilding = new MinerBuilding();
+                break;
+            case BuildingType.HOUSING:
+                returnBuilding = new HousingBuilding();
+                break;
+            case BuildingType.RESEARCH:
+                returnBuilding = new ResearchBuilding();
+                break;
+            case BuildingType.LANDING:
+                returnBuilding = new LandingBuilding();
+                break;
+            default:
+                returnBuilding = null;
+                Debug.Log("Could not create building object - Passed a incompatable enum type");
+                break;
+        }
+
+        return returnBuilding;
     }
 }
