@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    double movementMult = 3;
-    double fastMovementMult = 6;
+    double movementMult = 6;
+    double fastMovementMult = 15;
     double zoomMult = 8.0;
 
     float minZoom = 1;
