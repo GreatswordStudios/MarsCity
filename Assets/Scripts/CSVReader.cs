@@ -19,7 +19,7 @@ public static class CSVReader
         return returnDictionary;
     }
 
-    public static void loadDrainCSV() {
+    public static void LoadDrainCSV() {
         bool skippedFirstLine = false;
         using(var reader = new StreamReader(Application.dataPath + "/Scripts/Data/Building Consumption and Production Rate Table - Building And Resources.csv")) {
             while (!reader.EndOfStream) {

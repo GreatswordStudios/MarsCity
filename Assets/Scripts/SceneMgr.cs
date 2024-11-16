@@ -5,8 +5,9 @@ using UnityEngine;
 public class SceneMgr : MonoBehaviour
 {
     public static SceneMgr singleton;
+    public static Vector2 gridSize = new Vector2(64, 64);
 
-    Building[] buildings;
+    Building[,] buildings = new Building[(int) gridSize.y, (int) gridSize.x];
 
     public float water = 0;
     public float elec = 0;
@@ -27,79 +28,15 @@ public class SceneMgr : MonoBehaviour
     double timeSinceLastTick = 0;
     double tickMultiplier = 0; 
 
-    // GAME DESIGN VARIABLES
-    public static Dictionary<string, float> greenhouseDrain = new Dictionary<string, float>(){
-            { "water", 10 },
-            { "elec", 5 },
-            { "oxygen", -20 },
-            { "biomass", -20 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        };
-
-    public static Dictionary<string, float> solarDrain = new Dictionary<string, float>(){
-            { "water", 0 },
-            { "elec", -20 },
-            { "oxygen", 0 },
-            { "biomass", 0 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        };
-     
-    public static Dictionary<string, float> wasteProcessDrain = new Dictionary<string, float>(){
-            { "water", -20 },
-            { "elec", 10 },
-            { "oxygen", 0 },
-            { "biomass", 0 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        }; 
-     
-    public static Dictionary<string, float> nuclearDrain = new Dictionary<string, float>(){
-            { "water", 10 },
-            { "elec", 5 },
-            { "oxygen", -20 },
-            { "biomass", -20 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        }; 
-     
-    public static Dictionary<string, float> minerDrain = new Dictionary<string, float>(){
-            { "water", 10 },
-            { "elec", 5 },
-            { "oxygen", -20 },
-            { "biomass", -20 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        }; 
-     
-    public static Dictionary<string, float> housingDrain = new Dictionary<string, float>(){
-            { "water", 10 },
-            { "elec", 5 },
-            { "oxygen", -20 },
-            { "biomass", -20 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        }; 
-     
-    public static Dictionary<string, float> researchDrain = new Dictionary<string, float>(){
-            { "water", 10 },
-            { "elec", 5 },
-            { "oxygen", -20 },
-            { "biomass", -20 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        }; 
-     
-    public static Dictionary<string, float> landingDrain = new Dictionary<string, float>(){
-            { "water", 0 },
-            { "elec", 0 },
-            { "oxygen", 0 },
-            { "biomass", 0 },
-            { "buildingMats", 0 },
-            { "waste", 0}
-        }; 
-     
+    // GAME DESIGN VARIABLES - loaded by CSV in CSVReader
+    public static Dictionary<string, float> greenhouseDrain;
+    public static Dictionary<string, float> solarDrain;     
+    public static Dictionary<string, float> wasteProcessDrain;     
+    public static Dictionary<string, float> nuclearDrain;     
+    public static Dictionary<string, float> minerDrain;     
+    public static Dictionary<string, float> housingDrain;     
+    public static Dictionary<string, float> researchDrain;     
+    public static Dictionary<string, float> landingDrain;     
     
     // Start is called before the first frame update
     void Start()
@@ -110,7 +47,7 @@ public class SceneMgr : MonoBehaviour
         buildingMats = 50;
         oxygen = 50;
         biomass = 1;
-        CSVReader.loadDrainCSV();
+        CSVReader.LoadDrainCSV();
     }
 
     // Update is called once per frame
