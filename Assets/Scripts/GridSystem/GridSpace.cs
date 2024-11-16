@@ -5,17 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class GridSpace : MonoBehaviour
 {   
-    Collider collider;
+
+    public GameObject buildingObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<Collider>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         var mousePos = Input.mousePosition;
         var mouseRay = Camera.main.ScreenPointToRay(mousePos);
         if (collider.bounds.IntersectRay(mouseRay)){
@@ -24,5 +25,6 @@ public class GridSpace : MonoBehaviour
         else {
             GetComponent<MeshRenderer>().material.color = Color.white;
         }
+        */
     }
 }

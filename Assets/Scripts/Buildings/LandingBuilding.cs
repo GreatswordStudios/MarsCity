@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LandingBuilding : Building
 {
-    public override void Tick() {
+    public void Tick() {
         Dictionary<string, float> drain = SceneMgr.landingDrain;
         SceneMgr sceneMgr = SceneMgr.singleton;
 

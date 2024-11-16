@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SolarBuilding : Building
 {
-    public override void Tick() {
+    public void Tick() {
         Dictionary<string, float> drain = SceneMgr.solarDrain;
         SceneMgr sceneMgr = SceneMgr.singleton;
 

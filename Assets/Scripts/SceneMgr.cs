@@ -7,7 +7,7 @@ public class SceneMgr : MonoBehaviour
     public static SceneMgr singleton;
     public static Vector2 gridSize = new Vector2(64, 64);
 
-    Building[,] buildings = new Building[(int) gridSize.y, (int) gridSize.x];
+    public Building[,] buildings = new Building[(int) gridSize.y, (int) gridSize.x];
 
     public float water = 0;
     public float elec = 0;

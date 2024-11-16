@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResearchBuilding : Building
 {
-    public override void Tick() {
+    public void Tick() {
         Dictionary<string, float> drain = SceneMgr.researchDrain;
         SceneMgr sceneMgr = SceneMgr.singleton;
 

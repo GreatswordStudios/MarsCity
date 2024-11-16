@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WasteProcessBuilding : Building
 {
-    public override void Tick() {
+    public void Tick() {
         Dictionary<string, float> drain = SceneMgr.wasteProcessDrain;
         SceneMgr sceneMgr = SceneMgr.singleton;
 
