@@ -14,6 +14,7 @@ public class GreenhouseBuilding: Building
             sceneMgr.biomass -= drain["biomass"];
             sceneMgr.elec -= drain["elec"];
             sceneMgr.buildingMats -= drain["buildingMats"];
+            sceneMgr.waste -= drain["waste"];
         }
     }
 }
