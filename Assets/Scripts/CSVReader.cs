@@ -15,7 +15,8 @@ public static class CSVReader
             { "waste", float.Parse(pValues[4]) },
             { "cost", float.Parse(pValues[7]) },
             { "sizeX", float.Parse(pValues[10].Split(":")[0]) },
-            { "sizeY", float.Parse(pValues[10].Split(":")[1]) }
+            { "sizeY", float.Parse(pValues[10].Split(":")[1]) },
+            { "populationCost", float.Parse(pValues[9])}
         };
 
             

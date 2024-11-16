@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SceneMgr : MonoBehaviour
 {
@@ -87,8 +88,18 @@ public class SceneMgr : MonoBehaviour
         float totalDrainRateWaste = initialWaste - waste;
     }
 
+    public float GetWorkforceNeeded() {
+        float neededWorkforce = 0;
+        List<Building> uniqueBuildings = buildings.OfType<Building>().ToList().Distinct().ToList();
+
+        foreach(Building building in uniqueBuildings) {
+            neededWorkforce += gameDesignValues[building.GetBuildingType()]["populationCost"];
+        }
+        return neededWorkforce;
+    }
 
     public static void SetTickMultiplier(float newTickMultiplier) {
         singleton.tickMultiplier = newTickMultiplier;
     }
+
 }

@@ -96,6 +96,10 @@ public class GridManager : MonoBehaviour
         if(SceneMgr.singleton.buildingMats < SceneMgr.gameDesignValues[buildingType]["cost"]) {
             return false;
         }
+    
+        if(SceneMgr.singleton.population < SceneMgr.singleton.GetWorkforceNeeded() + SceneMgr.gameDesignValues[buildingType]["populationCost"]) {
+            return false;
+        }
 
         // check size
         int x, y;
