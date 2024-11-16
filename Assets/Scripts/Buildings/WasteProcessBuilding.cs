@@ -5,7 +5,7 @@ using UnityEngine;
 public class WasteProcessBuilding : Building
 {
     public void Tick() {
-        Dictionary<string, float> drain = SceneMgr.wasteProcessDrain;
+        Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.WASTEPROCESS];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         sceneMgr.water -= drain["water"] * sceneMgr.population;

@@ -12,7 +12,8 @@ public static class CSVReader
             { "oxygen", float.Parse(pValues[2]) },
             { "biomass", float.Parse(pValues[5]) },
             { "buildingMats", float.Parse(pValues[6]) },
-            { "waste", float.Parse(pValues[4]) }
+            { "waste", float.Parse(pValues[4]) },
+            { "cost", float.Parse(pValues[7]) }
         };
 
             
@@ -30,31 +31,39 @@ public static class CSVReader
                     skippedFirstLine = true;
                     continue;
                 }
-
+    
                 switch(values[0]) {
                     case "Housing":
-                        SceneMgr.housingDrain = ParseValues(values);
+                        //SceneMgr.housingDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.HOUSING, ParseValues(values));
                         break;
                     case "Landing Base":
-                        SceneMgr.landingDrain = ParseValues(values);
+                        //SceneMgr.landingDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.LANDING, ParseValues(values));
                         break;
                     case "Solar Farm":
-                        SceneMgr.solarDrain = ParseValues(values);
+                        //SceneMgr.solarDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.SOLAR, ParseValues(values));
                         break;
                     case "Nuclear Power Base":
-                        SceneMgr.nuclearDrain = ParseValues(values);
+                        //SceneMgr.nuclearDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.NUCLEAR, ParseValues(values));
                         break;
                     case "Research Facility":
-                        SceneMgr.researchDrain = ParseValues(values);
+                        //SceneMgr.researchDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.RESEARCH, ParseValues(values));
                         break;
                     case "Mining Drills":
-                        SceneMgr.minerDrain = ParseValues(values);
+                        //SceneMgr.minerDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.MINER, ParseValues(values));
                         break;
                     case "Waste Process":
-                        SceneMgr.wasteProcessDrain = ParseValues(values);
+                        //SceneMgr.wasteProcessDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.WASTEPROCESS, ParseValues(values));
                         break;
                     case "Greenhouse":
-                        SceneMgr.greenhouseDrain = ParseValues(values);
+                        //SceneMgr.greenhouseDrain = ParseValues(values);
+                        SceneMgr.gameDesignValues.Add(BuildingType.GREENHOUSE, ParseValues(values));
                         break;
                     default:
                         Debug.Log("CSV value: " + values[0] + " is not explicitly defined");
