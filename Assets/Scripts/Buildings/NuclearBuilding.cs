@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NuclearBuilding : Building
 {
+    public BuildingType GetBuildingType() {return BuildingType.NUCLEAR;}
+
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.NUCLEAR];
         SceneMgr sceneMgr = SceneMgr.singleton;

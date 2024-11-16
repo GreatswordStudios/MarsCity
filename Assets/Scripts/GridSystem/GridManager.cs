@@ -83,6 +83,9 @@ public class GridManager : MonoBehaviour
                 carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.red;
             }
         }
+        else { // not carrying a building
+            
+        }
         
     }
 

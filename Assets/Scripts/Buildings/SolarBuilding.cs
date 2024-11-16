@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SolarBuilding : Building
 {
+    public BuildingType GetBuildingType() {return BuildingType.SOLAR;}
+
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.SOLAR];
         SceneMgr sceneMgr = SceneMgr.singleton;

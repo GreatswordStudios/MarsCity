@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WasteProcessBuilding : Building
 {
+    public BuildingType GetBuildingType() {return BuildingType.WASTEPROCESS;}
+
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.WASTEPROCESS];
         SceneMgr sceneMgr = SceneMgr.singleton;

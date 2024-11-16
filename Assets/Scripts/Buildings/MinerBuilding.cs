@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MinerBuilding: Building
 {
+    public BuildingType GetBuildingType() {return BuildingType.MINER;}
+
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.MINER];
         SceneMgr sceneMgr = SceneMgr.singleton;

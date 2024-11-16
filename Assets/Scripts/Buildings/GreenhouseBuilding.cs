@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GreenhouseBuilding: Building
 {
+    public BuildingType GetBuildingType() {return BuildingType.GREENHOUSE;}
+
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.GREENHOUSE];
         SceneMgr sceneMgr = SceneMgr.singleton;

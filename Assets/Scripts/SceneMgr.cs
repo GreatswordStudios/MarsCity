@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SceneMgr : MonoBehaviour
 {
+    public static System.Random rng = new System.Random();
     public static SceneMgr singleton;
     public static Vector2 gridSize = new Vector2(64, 64);
 
@@ -62,7 +63,17 @@ public class SceneMgr : MonoBehaviour
         float initialBuildingMats = buildingMats;
         float initialWaste = waste;
 
-        foreach (Building building in buildings) {
+        // flatten buildings array so we can randomize execution order
+        List<Building> flattenedBuildings = new List<Building>();
+        for(int i = 0; i < buildings.GetLength(0); i++){
+            for(int j = 0; j < buildings.GetLength(1); j++){
+                flattenedBuildings.Add(buildings[j, i]);
+            }
+        }
+
+        flattenedBuildings = Utils.Shuffle(flattenedBuildings);
+
+        foreach (Building building in flattenedBuildings) {
             if(building != null) {
                 building.Tick();
             }

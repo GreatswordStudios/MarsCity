@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HousingBuilding : Building
 {
+    public BuildingType GetBuildingType() {return BuildingType.HOUSING;}
+
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.HOUSING];
         SceneMgr sceneMgr = SceneMgr.singleton;

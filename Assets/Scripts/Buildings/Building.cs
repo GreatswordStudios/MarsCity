@@ -13,7 +13,7 @@ public enum BuildingType{
 
 public interface Building
 {
-
+    public BuildingType GetBuildingType();
 
     public void Tick();
 }
