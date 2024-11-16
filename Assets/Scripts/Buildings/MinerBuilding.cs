@@ -5,7 +5,7 @@ using UnityEngine;
 public class MinerBuilding: Building
 {
     public void Tick() {
-        Dictionary<string, float> drain = SceneMgr.minerDrain;
+        Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.MINER];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         sceneMgr.water -= drain["water"] * sceneMgr.population;

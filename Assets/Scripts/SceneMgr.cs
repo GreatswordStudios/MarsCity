@@ -29,14 +29,7 @@ public class SceneMgr : MonoBehaviour
     double tickMultiplier = 0; 
 
     // GAME DESIGN VARIABLES - loaded by CSV in CSVReader
-    public static Dictionary<string, float> greenhouseDrain;
-    public static Dictionary<string, float> solarDrain;
-    public static Dictionary<string, float> wasteProcessDrain;
-    public static Dictionary<string, float> nuclearDrain;
-    public static Dictionary<string, float> minerDrain;
-    public static Dictionary<string, float> housingDrain; 
-    public static Dictionary<string, float> researchDrain;
-    public static Dictionary<string, float> landingDrain;
+    public static Dictionary<BuildingType, Dictionary<string, float>> gameDesignValues = new Dictionary<BuildingType, Dictionary<string, float>>();
     
     // Start is called before the first frame update
     void Start()
@@ -48,6 +41,7 @@ public class SceneMgr : MonoBehaviour
         oxygen = 50;
         biomass = 1;
         CSVReader.LoadDrainCSV();
+        Debug.Log(JsonUtility.ToJson(gameDesignValues));
     }
 
     // Update is called once per frame

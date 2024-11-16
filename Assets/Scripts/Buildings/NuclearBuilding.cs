@@ -5,7 +5,7 @@ using UnityEngine;
 public class NuclearBuilding : Building
 {
     public void Tick() {
-        Dictionary<string, float> drain = SceneMgr.nuclearDrain;
+        Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.NUCLEAR];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         sceneMgr.water -= drain["water"] * sceneMgr.population;

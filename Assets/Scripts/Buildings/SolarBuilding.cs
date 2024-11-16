@@ -5,7 +5,7 @@ using UnityEngine;
 public class SolarBuilding : Building
 {
     public void Tick() {
-        Dictionary<string, float> drain = SceneMgr.solarDrain;
+        Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.SOLAR];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         sceneMgr.water -= drain["water"] * sceneMgr.population;

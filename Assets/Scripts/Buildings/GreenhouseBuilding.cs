@@ -5,7 +5,7 @@ using UnityEngine;
 public class GreenhouseBuilding: Building
 {
     public void Tick() {
-        Dictionary<string, float> drain = SceneMgr.greenhouseDrain;
+        Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.GREENHOUSE];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         if(sceneMgr.water > drain["water"]) {

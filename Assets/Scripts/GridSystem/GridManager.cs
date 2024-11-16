@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour
     GameObject[,] grid = new GameObject[(int) SceneMgr.gridSize.y, (int) SceneMgr.gridSize.x];
 
     public GameObject carriedBuilding; // visual representation of the carried building
-    public BuildingType carriedBuildingType; // the building type we are carrying
+    public BuildingType carriedBuildingType = BuildingType.GREENHOUSE; // the building type we are carrying
     Vector2 selectedSpace = Vector2.zero;
 
     // Start is called before the first frame update
@@ -72,6 +72,9 @@ public class GridManager : MonoBehaviour
 
     bool BuildingCanBePlaced(Vector2 selectedSpace) {
         if(SceneMgr.singleton.buildings[(int) selectedSpace.x, (int) selectedSpace.y] != null) {
+            return false;
+        }
+        if(SceneMgr.singleton.buildingMats < SceneMgr.gameDesignValues[carriedBuildingType]["cost"]) {
             return false;
         }
 

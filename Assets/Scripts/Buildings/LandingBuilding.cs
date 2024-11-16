@@ -5,7 +5,7 @@ using UnityEngine;
 public class LandingBuilding : Building
 {
     public void Tick() {
-        Dictionary<string, float> drain = SceneMgr.landingDrain;
+        Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.LANDING];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         sceneMgr.water -= drain["water"] * sceneMgr.population;
