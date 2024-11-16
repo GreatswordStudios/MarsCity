@@ -26,7 +26,7 @@ public class SceneMgr : MonoBehaviour
 
     double tickTime = 1; // time in sec between ticks at normal speed
     double timeSinceLastTick = 0;
-    double tickMultiplier = 0; 
+    double tickMultiplier = 1; 
 
     // GAME DESIGN VARIABLES - loaded by CSV in CSVReader
     public static Dictionary<BuildingType, Dictionary<string, float>> gameDesignValues = new Dictionary<BuildingType, Dictionary<string, float>>();
@@ -64,7 +64,9 @@ public class SceneMgr : MonoBehaviour
         float initialWaste = waste;
 
         foreach (Building building in buildings) {
-            building.Tick();
+            if(building != null) {
+                building.Tick();
+            }
         }
 
         float totalDrainRateWater = initialWater - water;
