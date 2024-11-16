@@ -1,0 +1,11 @@
+Building,Water Consumption (ML),Oxygen Consumption (kT),Power Consumption (MW),Waste Consumption (kT),Agriculture Consumption (kT),Building Mats consumption (kT),Population Consumption (hundreds),Building Mats cost (kT),Population Operation Cost (people)
+Housing,0,5,10,-5,50,0,0,3,20
+Landing Base,-50,-50,0,-2,0,-50,-0.5,10,20
+Solar Farm,0,0,-10,0,0,0,0,10,3
+Nuclear Power Base,5,0,-50,0,0,0,0,40,30
+Research Facility,0,2,20,-1,0,0,0,30,30
+Mining Drills,-2,0,5,0,0,-15,0,2,2
+Waste Process ,-5,5,10,45,-2,0,0,15,5
+Greenhouse,2,-2,30,10,-15,0,0,80,10
+Population (500 people),5,5,1,-5,15,0,-0.05,0,0
+Population (1 person),0.01,0.01,0.002,-0.01,0.03,0,-0.0001,0,0

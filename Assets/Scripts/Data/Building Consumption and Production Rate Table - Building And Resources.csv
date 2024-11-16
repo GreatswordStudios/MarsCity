@@ -1,9 +1,0 @@
-Building,Water Consumption (ML),Oxygen Consumption (kT),Building Mats cost (kT),Building Mats production (kT),Power Consumption (MW),Waste Consumption (kT),Agriculture Consumption (kT),Population (production) (hundreds)
-Housing,5,5,3,0,10,-50,50,0
-Landing Base,-50,-50,10,-50,0,-2,0,0.5
-Solar Farm,0,0,10,0,-10,0,0,0
-Nuclear Power Base,5,0,40,0,-50,0,0,0
-Research Facility,0,2,30,0,20,-1,0,0
-Mining Drills,-2,0,2,-15,5,0,0,0
-Waste Process ,-5,5,15,0,10,45,-2,0
-Greenhouse,2,-2,80,0,30,10,-15,0
