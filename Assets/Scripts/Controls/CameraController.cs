@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    double movementMult = 6;
-    double fastMovementMult = 15;
+    double movementMult = 60;
+    double fastMovementMult = 150;
     double zoomMult = 8.0;
 
-    float minZoom = 1;
-    float maxZoom = 10;
+    float minZoom = 10;
+    float maxZoom = 100;
 
     // Start is called before the first frame update
     void Start()
