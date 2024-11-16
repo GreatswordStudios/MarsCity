@@ -13,7 +13,7 @@ public class SceneMgr : MonoBehaviour
     float TotalDrainRateElec = 0;
     float TotalDrainRateOxygen = 0;
     float TotalDrainRateBio = 0;
-    float TotalDrainRate = 0;
+    float TotalDrainRateBuildingMats = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -24,5 +24,7 @@ public class SceneMgr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //count all buildings
+
     }
 }
