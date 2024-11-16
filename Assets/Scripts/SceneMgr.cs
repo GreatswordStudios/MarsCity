@@ -25,7 +25,7 @@ public class SceneMgr : MonoBehaviour
 
     double tickTime = 1; // time in sec between ticks at normal speed
     double timeSinceLastTick = 0;
-    double tickMultiplier = 1.0; 
+    double tickMultiplier = 0; 
 
     // GAME DESIGN VARIABLES
     public static Dictionary<string, float> greenhouseDrain = new Dictionary<string, float>(){
@@ -110,6 +110,7 @@ public class SceneMgr : MonoBehaviour
         buildingMats = 50;
         oxygen = 50;
         biomass = 1;
+        CSVReader.loadDrainCSV();
     }
 
     // Update is called once per frame
