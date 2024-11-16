@@ -19,6 +19,8 @@ public class GridManager : MonoBehaviour
     {
         singleton = this;
         SpawnGrid();
+        Camera.main.gameObject.transform.Translate(0, (int) SceneMgr.gridSize.y * gridSize / 2, 0, Space.Self);
+        Camera.main.gameObject.transform.Translate((int) SceneMgr.gridSize.x * gridSize / 2, 0, 0, Space.Self);
     }
 
     void SpawnGrid() {
@@ -50,18 +52,27 @@ public class GridManager : MonoBehaviour
             GameObject gridSpace = grid[(int) selectedSpace.x, (int) selectedSpace.y];
             carriedBuilding.transform.position = gridSpace.transform.position;
             
-            if(BuildingCanBePlaced(selectedSpace)) {
-                if(Input.GetMouseButtonDown(1)) { // cancel placement
-                    Destroy(carriedBuilding);
-                    carriedBuilding = null;
-                }
-                else if(Input.GetMouseButtonDown(0)) { // attempt to place
+            if(Input.GetMouseButtonDown(1)) { // cancel placement
+                Destroy(carriedBuilding);
+                carriedBuilding = null;
+            }
+            else if(BuildingCanBePlaced(selectedSpace, carriedBuildingType)) {
+                
+                if(Input.GetMouseButtonDown(0)) { // attempt to place
                     carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.white; // set msterial back to normal
 
-                    SceneMgr.singleton.buildings[(int) selectedSpace.x, (int) selectedSpace.y] = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
+                    // place building placeholders
+                    Building placedBuilding = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
+                    int x, y;
+                    for(int i = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeX"]; i++) {
+                        for(int j = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeY"]; i++) {
+                            x = (int) selectedSpace.x + i;
+                            y = (int) selectedSpace.y + j;
+                            SceneMgr.singleton.buildings[x, y] = placedBuilding;
+                        }
+                    }
 
                     gridSpace.GetComponent<GridSpace>().buildingObject = carriedBuilding;
-                    carriedBuilding.transform.parent = gridSpace.transform;
                     carriedBuilding = null; // remove building (visual) from our control
                 }
                 else { // no action being done
@@ -75,12 +86,21 @@ public class GridManager : MonoBehaviour
         
     }
 
-    bool BuildingCanBePlaced(Vector2 selectedSpace) {
-        if(SceneMgr.singleton.buildings[(int) selectedSpace.x, (int) selectedSpace.y] != null) {
+    bool BuildingCanBePlaced(Vector2 selectedSpace, BuildingType buildingType) {
+        if(SceneMgr.singleton.buildingMats < SceneMgr.gameDesignValues[buildingType]["cost"]) {
             return false;
         }
-        if(SceneMgr.singleton.buildingMats < SceneMgr.gameDesignValues[carriedBuildingType]["cost"]) {
-            return false;
+
+        // check size
+        int x, y;
+        for(int i = 0; i < SceneMgr.gameDesignValues[buildingType]["sizeX"]; i++) {
+            for(int j = 0; i < SceneMgr.gameDesignValues[buildingType]["sizeY"]; i++) {
+                x = (int) selectedSpace.x + i;
+                y = (int) selectedSpace.y + j;
+                if(x > SceneMgr.singleton.buildings.GetLength(0) || y > SceneMgr.singleton.buildings.GetLength(1) || SceneMgr.singleton.buildings[x, y] != null) {
+                    return false;
+                }
+            }
         }
 
         return true;
