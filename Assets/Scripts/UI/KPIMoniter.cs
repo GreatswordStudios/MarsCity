@@ -12,7 +12,8 @@ public enum KPI{
     WASTE,
     POWER,
     BUILDINGMATERIALS,
-    DATE
+    DATE,
+    NEXTDROP
 }
 public class KPIMoniter : MonoBehaviour
 {
@@ -64,6 +65,12 @@ public class KPIMoniter : MonoBehaviour
 
         if(moniterType == KPI.DATE) {
             GetComponent<TMP_Text>().text = String.Format("{0:M/d/yyyy}", SceneMgr.singleton.curDate);
+        }
+        else if(moniterType == KPI.NEXTDROP) {
+            DateTime nextMonth = SceneMgr.singleton.curDate.AddMonths(1);
+            DateTime firstOfNextMonth = new DateTime(nextMonth.Year, nextMonth.Month, 1);
+            int timeTillNextDrop = (int) (firstOfNextMonth - SceneMgr.singleton.curDate).TotalDays;
+            GetComponent<TMP_Text>().text = timeTillNextDrop + " days";
         }
         else {
             GetComponent<TMP_Text>().text = curAmount.ToString("n2") + "(" + changeAmount.ToString("n2") + ")";
