@@ -26,7 +26,7 @@ public static class Utils
         GameObject prefab = null;
         switch(buildingType) {
             case BuildingType.GREENHOUSE:
-                prefab = Resources.Load<GameObject>("Architecture/Greenhouse1");
+                prefab = Resources.Load<GameObject>("Architecture/Greenhouse");
                 break;
             case BuildingType.SOLAR:
                 prefab = Resources.Load<GameObject>("Architecture/");

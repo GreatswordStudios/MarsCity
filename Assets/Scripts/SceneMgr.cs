@@ -62,6 +62,19 @@ public class SceneMgr : MonoBehaviour
             curDate = curDate.AddDays(1);
             timeSinceLastTick = 0;
         }
+
+        // Check if the Escape key is pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Close the application
+            Debug.Log("Escape key pressed. Exiting the application.");
+            Application.Quit();
+
+            // Note: Application.Quit() won't work in the Unity Editor.
+            // the next line is to stop play mode in the Unity Editor (for testing).
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+
     }
 
     void TickAll() {
