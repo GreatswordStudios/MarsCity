@@ -69,10 +69,6 @@ public class SceneMgr : MonoBehaviour
             // Close the application
             Debug.Log("Escape key pressed. Exiting the application.");
             Application.Quit();
-
-            // Note: Application.Quit() won't work in the Unity Editor.
-            // the next line is to stop play mode in the Unity Editor (for testing).
-            UnityEditor.EditorApplication.isPlaying = false;
         }
 
     }
