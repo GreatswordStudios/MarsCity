@@ -25,7 +25,7 @@ public static class CSVReader
 
     public static void LoadDrainCSV() {
         bool skippedFirstLine = false;
-        using(var reader = new StreamReader(Application.dataPath + "/Scripts/Data/Building Consumption and Production Rate Table - Building And Resources.csv")) {
+        using(var reader = new StreamReader(Application.streamingAssetsPath + "/Building Consumption and Production Rate Table - Building And Resources.csv")) {
             while (!reader.EndOfStream) {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
