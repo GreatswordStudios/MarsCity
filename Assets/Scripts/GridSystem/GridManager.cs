@@ -121,6 +121,7 @@ public class GridManager : MonoBehaviour
         SceneMgr.singleton.DestroyBuilding(selectedSpace);
 
         SceneMgr.singleton.buildingMats += -5;
+        TooltipSystem.Hide(); // tooltip will be on top of building and must be hidden
     }
 
     public void PlaceBuilding(Vector2 selectedSpace, BuildingType buildingType, bool isProtected = false) {
