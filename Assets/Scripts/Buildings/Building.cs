@@ -8,7 +8,8 @@ public enum BuildingType{
     MINER,
     HOUSING,
     RESEARCH,
-    LANDING
+    LANDING,
+    POPULATION
 }
 
 public interface Building

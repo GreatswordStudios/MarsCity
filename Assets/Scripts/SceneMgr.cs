@@ -84,12 +84,14 @@ public class SceneMgr : MonoBehaviour
             }
         }
 
-        float totalDrainRateWater = initialWater - water;
-        float totalDrainRateElec = initialElec - elec;
-        float totalDrainRateOxygen = initialOxygen - oxygen;
-        float totalDrainRateBiomass = initialBiomass - biomass;
-        float totalDrainRateBuildingMats = initialBuildingMats - buildingMats;
-        float totalDrainRateWaste = initialWaste - waste;
+        TickPopulation();
+
+        totalDrainRateWater = water - initialWater;
+        totalDrainRateElec = elec - initialElec;
+        totalDrainRateOxygen = oxygen - initialOxygen;
+        totalDrainRateBiomass = biomass - initialBiomass;
+        totalDrainRateBuildingMats = buildingMats - initialBuildingMats;
+        totalDrainRateWaste = waste - initialWaste;
     }
 
     public float GetWorkforceNeeded() {
@@ -100,6 +102,15 @@ public class SceneMgr : MonoBehaviour
             neededWorkforce += gameDesignValues[building.GetBuildingType()]["populationCost"];
         }
         return neededWorkforce;
+    }
+
+    void TickPopulation() {
+        water -= gameDesignValues[BuildingType.POPULATION]["water"] * population;
+        oxygen -= gameDesignValues[BuildingType.POPULATION]["oxygen"] * population;
+        biomass -= gameDesignValues[BuildingType.POPULATION]["biomass"] * population;
+        elec -= gameDesignValues[BuildingType.POPULATION]["elec"] * population;
+        buildingMats -= gameDesignValues[BuildingType.POPULATION]["buildingMats"] * population;
+        waste -= gameDesignValues[BuildingType.POPULATION]["waste"] * population;
     }
 
     public static void SetTickMultiplier(float newTickMultiplier) {

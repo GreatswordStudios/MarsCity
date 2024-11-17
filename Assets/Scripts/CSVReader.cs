@@ -37,36 +37,31 @@ public static class CSVReader
     
                 switch(values[0]) {
                     case "Housing":
-                        //SceneMgr.housingDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.HOUSING, ParseValues(values));
                         break;
                     case "Landing Base":
-                        //SceneMgr.landingDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.LANDING, ParseValues(values));
                         break;
                     case "Solar Farm":
-                        //SceneMgr.solarDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.SOLAR, ParseValues(values));
                         break;
                     case "Nuclear Power Base":
-                        //SceneMgr.nuclearDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.NUCLEAR, ParseValues(values));
                         break;
                     case "Research Facility":
-                        //SceneMgr.researchDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.RESEARCH, ParseValues(values));
                         break;
                     case "Mining Drills":
-                        //SceneMgr.minerDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.MINER, ParseValues(values));
                         break;
                     case "Waste Process":
-                        //SceneMgr.wasteProcessDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.WASTEPROCESS, ParseValues(values));
                         break;
                     case "Greenhouse":
-                        //SceneMgr.greenhouseDrain = ParseValues(values);
                         SceneMgr.gameDesignValues.Add(BuildingType.GREENHOUSE, ParseValues(values));
+                        break;
+                    case "Population (1 person)":
+                        SceneMgr.gameDesignValues.Add(BuildingType.POPULATION, ParseValues(values));
                         break;
                     default:
                         Debug.Log("CSV value: " + values[0] + " is not explicitly defined");

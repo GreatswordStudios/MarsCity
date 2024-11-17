@@ -42,7 +42,7 @@ public class KPIMoniter : MonoBehaviour
                 break;
             case KPI.AGRICULTURE:
                 curAmount = SceneMgr.singleton.biomass;
-                changeAmount = SceneMgr.singleton.biomass;
+                changeAmount = SceneMgr.singleton.totalDrainRateBiomass;
                 break;
             case KPI.WASTE:
                 curAmount = SceneMgr.singleton.waste;
@@ -58,7 +58,7 @@ public class KPIMoniter : MonoBehaviour
                 break;    
         }
 
-        GetComponent<TMP_Text>().text = curAmount + "(" + changeAmount + ")";
+        GetComponent<TMP_Text>().text = curAmount.ToString("n2") + "(" + changeAmount.ToString("n2") + ")";
         
     }
 }
