@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingObject: {fileID: 0}
+  isProtected: 0
 --- !u!65 &6704372560054286328
 BoxCollider:
   m_ObjectHideFlags: 0
