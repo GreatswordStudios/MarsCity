@@ -48,6 +48,7 @@ public class SceneMgr : MonoBehaviour
         CSVReader.LoadDrainCSV();
 
         GridManager.singleton.PlaceBuilding(gridSize / 2, BuildingType.LANDING);
+        GridManager.singleton.PlaceBuilding((gridSize / 2) - new Vector2(1, 0), BuildingType.HOUSING);
     }
 
     // Update is called once per frame
