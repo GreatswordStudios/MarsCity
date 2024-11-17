@@ -19,8 +19,6 @@ public class GridManager : MonoBehaviour
     {
         singleton = this;
         SpawnGrid();
-        Camera.main.gameObject.transform.Translate(0, (int) SceneMgr.gridSize.y * gridSize / 2, 0, Space.Self);
-        Camera.main.gameObject.transform.Translate((int) SceneMgr.gridSize.x * gridSize / 2, 0, 0, Space.Self);
     }
 
     void SpawnGrid() {
@@ -111,6 +109,7 @@ public class GridManager : MonoBehaviour
         if(carriedBuilding != null) {
             Destroy(carriedBuilding);
         }
+        InventoryManager.CloseAllPanel();
         carriedBuildingType = buildingType;
         carriedBuilding = Instantiate(Utils.GetBuildingMeshFromEnum(buildingType));
     }

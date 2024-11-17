@@ -55,5 +55,7 @@ public class InventoryManager : MonoBehaviour
         InventoryManager.singleton.miningInventory.SetActive(false);
         InventoryManager.singleton.housingInventory.SetActive(false);
         InventoryManager.singleton.researchInventory.SetActive(false);
+
+        Utils.mouseOverUI = false;
     }
 }
