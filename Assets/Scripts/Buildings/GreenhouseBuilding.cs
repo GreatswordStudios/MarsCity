@@ -10,7 +10,7 @@ public class GreenhouseBuilding: Building
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.GREENHOUSE];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
-        if(sceneMgr.water > drain["water"] && sceneMgr.elec >= drain["elec"]  && sceneMgr.waste >= drain["waste"] && sceneMgr.availableWorkforce >= drain['populationCost']) {
+        if(sceneMgr.water > drain["water"] && sceneMgr.elec >= drain["elec"]  && sceneMgr.waste >= drain["waste"] && sceneMgr.availableWorkforce >= drain["populationCost"]) {
             
             sceneMgr.water -= drain["water"];
             sceneMgr.oxygen -= drain["oxygen"];
@@ -18,7 +18,7 @@ public class GreenhouseBuilding: Building
             sceneMgr.elec -= drain["elec"];
             sceneMgr.buildingMats -= drain["buildingMats"];
             sceneMgr.waste -= drain["waste"];
-            sceneMgr.availableWorkforce -= drain['populationCost'];
+            sceneMgr.availableWorkforce -= drain["populationCost"];
             return;
         }
 

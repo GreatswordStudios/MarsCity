@@ -10,7 +10,7 @@ public class NuclearBuilding : Building
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.NUCLEAR];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
-        if(sceneMgr.water > drain["water"] && sceneMgr.availableWorkforce >= drain['populationCost']) {
+        if(sceneMgr.water > drain["water"] && sceneMgr.availableWorkforce >= drain["populationCost"]) {
             
             sceneMgr.water -= drain["water"];
             sceneMgr.oxygen -= drain["oxygen"];
@@ -18,7 +18,7 @@ public class NuclearBuilding : Building
             sceneMgr.elec -= drain["elec"];
             sceneMgr.buildingMats -= drain["buildingMats"];
             sceneMgr.waste -= drain["waste"];
-            sceneMgr.availableWorkforce -= drain['populationCost'];
+            sceneMgr.availableWorkforce -= drain["populationCost"];
             return;
         }
 

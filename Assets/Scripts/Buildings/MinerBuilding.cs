@@ -10,7 +10,7 @@ public class MinerBuilding: Building
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.MINER];
         SceneMgr sceneMgr = SceneMgr.singleton;
 
-        if(sceneMgr.elec >= drain["elec"]  && sceneMgr.availableWorkforce >= drain['populationCost']) {
+        if(sceneMgr.elec >= drain["elec"]  && sceneMgr.availableWorkforce >= drain["populationCost"]) {
             
             sceneMgr.water -= drain["water"];
             sceneMgr.oxygen -= drain["oxygen"];
@@ -18,7 +18,7 @@ public class MinerBuilding: Building
             sceneMgr.elec -= drain["elec"];
             sceneMgr.buildingMats -= drain["buildingMats"];
             sceneMgr.waste -= drain["waste"];
-            sceneMgr.availableWorkforce -= drain['populationCost'];
+            sceneMgr.availableWorkforce -= drain["populationCost"];
             return;
         }
 

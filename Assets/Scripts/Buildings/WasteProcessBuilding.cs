@@ -11,7 +11,7 @@ public class WasteProcessBuilding : Building
         SceneMgr sceneMgr = SceneMgr.singleton;
 
         //check electricity, workforce, and waste
-        if (sceneMgr.elec >= drain["elec"]  && sceneMgr.waste >= drain["waste"] && sceneMgr.availableWorkforce >= drain['populationCost']) {
+        if (sceneMgr.elec >= drain["elec"]  && sceneMgr.waste >= drain["waste"] && sceneMgr.availableWorkforce >= drain["populationCost"]) {
             
             sceneMgr.water -= drain["water"];
             sceneMgr.oxygen -= drain["oxygen"];
@@ -19,7 +19,7 @@ public class WasteProcessBuilding : Building
             sceneMgr.elec -= drain["elec"];
             sceneMgr.buildingMats -= drain["buildingMats"];
             sceneMgr.waste -= drain["waste"];
-            sceneMgr.availableWorkforce -= drain['populationCost'];
+            sceneMgr.availableWorkforce -= drain["populationCost"];
             return;
         }
 

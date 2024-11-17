@@ -11,7 +11,7 @@ public class SolarBuilding : Building
         SceneMgr sceneMgr = SceneMgr.singleton;
 
 
-        if(sceneMgr.availableWorkforce >= drain['populationCost']) {
+        if(sceneMgr.availableWorkforce >= drain["populationCost"]) {
             
             sceneMgr.water -= drain["water"];
             sceneMgr.oxygen -= drain["oxygen"];
@@ -19,7 +19,7 @@ public class SolarBuilding : Building
             sceneMgr.elec -= drain["elec"];
             sceneMgr.buildingMats -= drain["buildingMats"];
             sceneMgr.waste -= drain["waste"];
-            sceneMgr.availableWorkforce -= drain['populationCost'];
+            sceneMgr.availableWorkforce -= drain["populationCost"];
             return;
         }
 
