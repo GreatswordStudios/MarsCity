@@ -22,4 +22,36 @@ public static class Utils
         return mouseOverUI;
     }
 
+    public static GameObject GetBuildingMeshFromEnum(BuildingType buildingType) {
+        GameObject prefab = null;
+        switch(buildingType) {
+            case BuildingType.GREENHOUSE:
+                prefab = Resources.Load<GameObject>("Architecture/Greenhouse");
+                break;
+            case BuildingType.SOLAR:
+                prefab = Resources.Load<GameObject>("Architecture/");
+                break;
+            case BuildingType.WASTEPROCESS:
+                prefab = Resources.Load<GameObject>("Architecture/");
+                break;
+            case BuildingType.NUCLEAR:
+                prefab = Resources.Load<GameObject>("Architecture/Power Teir 1");
+                break;
+            case BuildingType.MINER:
+                prefab = Resources.Load<GameObject>("Architecture/");
+                break;
+            case BuildingType.HOUSING:
+                prefab = Resources.Load<GameObject>("Architecture/Housing");
+                break;
+            case BuildingType.RESEARCH:
+                prefab = Resources.Load<GameObject>("Architecture/");
+                break;
+            case BuildingType.LANDING:
+                prefab = Resources.Load<GameObject>("Architecture/Landing Base");
+                break;
+        }
+
+        return prefab;
+    }
+
 }

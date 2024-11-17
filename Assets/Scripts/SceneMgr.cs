@@ -46,6 +46,8 @@ public class SceneMgr : MonoBehaviour
         oxygen = 50;
         biomass = 1;
         CSVReader.LoadDrainCSV();
+
+        GridManager.singleton.PlaceBuilding(gridSize / 2, BuildingType.LANDING);
     }
 
     // Update is called once per frame

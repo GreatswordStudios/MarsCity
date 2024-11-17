@@ -62,20 +62,8 @@ public class GridManager : MonoBehaviour
             else if(BuildingCanBePlaced(selectedSpace, carriedBuildingType)) {
                 
                 if(Input.GetMouseButtonDown(0)) { // attempt to place
-                    carriedBuilding.GetComponent<MeshRenderer>().material.color = Color.white; // set msterial back to normal
-
-                    // place building placeholders
-                    Building placedBuilding = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
-                    int x, y;
-                    for(int i = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeX"]; i++) {
-                        for(int j = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeY"]; i++) {
-                            x = (int) selectedSpace.x + i;
-                            y = (int) selectedSpace.y + j;
-                            SceneMgr.singleton.buildings[x, y] = placedBuilding;
-                        }
-                    }
-
-                    gridSpace.GetComponent<GridSpace>().buildingObject = carriedBuilding;
+                    PlaceBuilding(selectedSpace, carriedBuildingType);
+                    Destroy(carriedBuilding); // Get rid of carried representation
                     carriedBuilding = null; // remove building (visual) from our control
                 }
                 else { // no action being done
@@ -89,7 +77,35 @@ public class GridManager : MonoBehaviour
         else { // not carrying a building
             
         }
-        
+    }
+
+    public void CarryBuilding(BuildingType buildingType) {
+        if(carriedBuilding != null) {
+            Destroy(carriedBuilding);
+        }
+        carriedBuildingType = buildingType;
+        carriedBuilding = Instantiate(Utils.GetBuildingMeshFromEnum(buildingType));
+    }
+
+    public void PlaceBuilding(Vector2 selectedSpace, BuildingType buildingType) {
+        if(!BuildingCanBePlaced(selectedSpace, carriedBuildingType)) return;
+        GameObject gridSpace = grid[(int) selectedSpace.x, (int) selectedSpace.y];
+
+        // place building placeholders
+        Building placedBuilding = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
+        int x, y;
+        for(int i = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeX"]; i++) {
+            for(int j = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeY"]; i++) {
+                x = (int) selectedSpace.x + i;
+                y = (int) selectedSpace.y + j;
+                SceneMgr.singleton.buildings[x, y] = placedBuilding;
+            }
+        }
+
+        GameObject spawnedBuilding = Instantiate(Utils.GetBuildingMeshFromEnum(buildingType));
+        spawnedBuilding.transform.position = gridSpace.transform.position;
+
+        gridSpace.GetComponent<GridSpace>().buildingObject = Instantiate(spawnedBuilding);
     }
 
     bool BuildingCanBePlaced(Vector2 selectedSpace, BuildingType buildingType) {
