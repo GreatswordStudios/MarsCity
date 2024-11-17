@@ -36,15 +36,20 @@ public class ToolTip : MonoBehaviour
         layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
         
     }
-    private void Update() {
+
+    public void MoveToMouse() {
         Vector2 position = Input.mousePosition;
 
-    transform.position = position;
-    float pivotX = position.x / Screen.width;
-    float pivotY = position.y / Screen.height;
+        transform.position = position;
+        float pivotX = position.x / Screen.width;
+        float pivotY = position.y / Screen.height;
 
-    rectTransform.pivot = new Vector2(pivotX, pivotY);
-    transform.position = position;
+        rectTransform.pivot = new Vector2(pivotX, pivotY);
+        transform.position = position;
+    }
+
+    private void Update() {
+        MoveToMouse();
     }
 
     
