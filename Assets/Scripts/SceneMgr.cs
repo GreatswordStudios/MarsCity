@@ -29,7 +29,7 @@ public class SceneMgr : MonoBehaviour
 
     double tickTime = 1; // time in sec between ticks at normal speed
     double timeSinceLastTick = 0;
-    double tickMultiplier = 1; 
+    public double tickMultiplier = 1; 
 
     // GAME DESIGN VARIABLES - loaded by CSV in CSVReader
     public static Dictionary<BuildingType, Dictionary<string, float>> gameDesignValues = new Dictionary<BuildingType, Dictionary<string, float>>();
@@ -39,7 +39,9 @@ public class SceneMgr : MonoBehaviour
     {   
         singleton = this;
         water = 500;
-        elec = 0;
+        elec = 200;
+        population = 100;
+        waste = 100;
         buildingMats = 50;
         oxygen = 50;
         biomass = 1;

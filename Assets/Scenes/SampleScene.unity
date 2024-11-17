@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 7924287}
   - component: {fileID: 7924290}
   - component: {fileID: 7924289}
+  - component: {fileID: 7924291}
   - component: {fileID: 7924288}
   m_Layer: 5
   m_Name: Pause
@@ -203,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7924289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7924291}
+        m_TargetAssemblyTypeName: TimeScaleButton, Assembly-CSharp
+        m_MethodName: SetTimeScale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7924289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +255,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7924286}
   m_CullTransparentMesh: 1
+--- !u!114 &7924291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdac9d542cda3404d93f0cb58f9277a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 0
 --- !u!1 &30197447
 GameObject:
   m_ObjectHideFlags: 0
@@ -6142,6 +6168,7 @@ MonoBehaviour:
   totalDrainRateBiomass: 0
   totalDrainRateBuildingMats: 0
   totalDrainRateWaste: 0
+  tickMultiplier: 1
 --- !u!4 &1315208038
 Transform:
   m_ObjectHideFlags: 0
@@ -8047,6 +8074,7 @@ GameObject:
   - component: {fileID: 1859508198}
   - component: {fileID: 1859508197}
   - component: {fileID: 1859508196}
+  - component: {fileID: 1859508199}
   - component: {fileID: 1859508195}
   m_Layer: 5
   m_Name: Play
@@ -8169,7 +8197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1859508197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1859508199}
+        m_TargetAssemblyTypeName: TimeScaleButton, Assembly-CSharp
+        m_MethodName: SetTimeScale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1859508197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8208,6 +8248,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859508193}
   m_CullTransparentMesh: 1
+--- !u!114 &1859508199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859508193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdac9d542cda3404d93f0cb58f9277a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
 --- !u!1 &1883950990
 GameObject:
   m_ObjectHideFlags: 0
@@ -8219,6 +8272,7 @@ GameObject:
   - component: {fileID: 1883950991}
   - component: {fileID: 1883950994}
   - component: {fileID: 1883950993}
+  - component: {fileID: 1883950995}
   - component: {fileID: 1883950992}
   m_Layer: 5
   m_Name: DoubleFF
@@ -8289,7 +8343,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1883950993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1883950995}
+        m_TargetAssemblyTypeName: TimeScaleButton, Assembly-CSharp
+        m_MethodName: SetTimeScale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1883950993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8328,6 +8394,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883950990}
   m_CullTransparentMesh: 1
+--- !u!114 &1883950995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883950990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdac9d542cda3404d93f0cb58f9277a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 3
 --- !u!1 &1903849298
 GameObject:
   m_ObjectHideFlags: 0
@@ -9576,6 +9655,7 @@ GameObject:
   - component: {fileID: 2122412403}
   - component: {fileID: 2122412406}
   - component: {fileID: 2122412405}
+  - component: {fileID: 2122412407}
   - component: {fileID: 2122412404}
   m_Layer: 5
   m_Name: FF
@@ -9647,13 +9727,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 213107db62846224aaf96f5f01b6ebe9, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2122412407}
+        m_TargetAssemblyTypeName: TimeScaleButton, Assembly-CSharp
+        m_MethodName: SetTimeScale
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9697,6 +9777,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122412402}
   m_CullTransparentMesh: 1
+--- !u!114 &2122412407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122412402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdac9d542cda3404d93f0cb58f9277a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
