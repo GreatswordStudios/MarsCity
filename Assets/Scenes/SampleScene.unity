@@ -1831,6 +1831,7 @@ GameObject:
   - component: {fileID: 344434790}
   - component: {fileID: 344434792}
   - component: {fileID: 344434791}
+  - component: {fileID: 344434793}
   m_Layer: 5
   m_Name: PowerAmt
   m_TagString: Untagged
@@ -1955,6 +1956,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344434789}
   m_CullTransparentMesh: 1
+--- !u!114 &344434793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344434789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a9590f9454c7147befec165136a186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moniterType: 5
 --- !u!1 &387399685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,7 +3190,6 @@ GameObject:
   m_Component:
   - component: {fileID: 636086905}
   - component: {fileID: 636086907}
-  - component: {fileID: 636086908}
   - component: {fileID: 636086906}
   m_Layer: 5
   m_Name: BuildingMatsTitle
@@ -3302,19 +3315,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636086904}
   m_CullTransparentMesh: 1
---- !u!114 &636086908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636086904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a9590f9454c7147befec165136a186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moniterType: 6
 --- !u!1 &662981815
 GameObject:
   m_ObjectHideFlags: 0
@@ -6378,7 +6378,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1432345178}
   - component: {fileID: 1432345180}
-  - component: {fileID: 1432345181}
   - component: {fileID: 1432345179}
   m_Layer: 5
   m_Name: PowerTitle (1)
@@ -6504,19 +6503,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432345177}
   m_CullTransparentMesh: 1
---- !u!114 &1432345181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432345177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a9590f9454c7147befec165136a186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moniterType: 5
 --- !u!1 &1434283098
 GameObject:
   m_ObjectHideFlags: 0
@@ -9248,6 +9234,7 @@ GameObject:
   - component: {fileID: 2065121734}
   - component: {fileID: 2065121736}
   - component: {fileID: 2065121735}
+  - component: {fileID: 2065121737}
   m_Layer: 5
   m_Name: MatsAmt
   m_TagString: Untagged
@@ -9372,6 +9359,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065121733}
   m_CullTransparentMesh: 1
+--- !u!114 &2065121737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065121733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a9590f9454c7147befec165136a186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moniterType: 6
 --- !u!1 &2084126893
 GameObject:
   m_ObjectHideFlags: 0
