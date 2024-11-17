@@ -3,7 +3,22 @@ guid: b89a8abba22b4634ba2867c455b3b693
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Accesories
+    second: {fileID: 2100000, guid: 7ba892f8b75937d408f17b951a8cfb7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: b92b8e7c68f37b247943f1245ccc2312, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rods
+    second: {fileID: 2100000, guid: 3ef5f0ccd711bf449a0bb9ebd44221da, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
