@@ -53,7 +53,7 @@ public static class Utils
                 prefab = Resources.Load<GameObject>("Architecture/Housing");
                 break;
             case BuildingType.RESEARCH:
-                prefab = Resources.Load<GameObject>("Architecture/Reasearch Lab");
+                prefab = Resources.Load<GameObject>("Architecture/Research Lab");
                 break;
             case BuildingType.LANDING:
                 prefab = Resources.Load<GameObject>("Architecture/Landing Pad");
