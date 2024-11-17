@@ -5,8 +5,11 @@ public enum BuildingType{
     SOLAR,
     WASTEPROCESS,
     NUCLEAR,
+    NUCLEAR_2,
+    NUCLEAR_3,
     MINER,
     HOUSING,
+    HOUSING_2,
     RESEARCH,
     LANDING,
     POPULATION

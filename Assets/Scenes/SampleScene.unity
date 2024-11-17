@@ -3074,7 +3074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3f49548d9ef17408670630c2d66342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 5
+  buildingType: 8
 --- !u!114 &713442341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4033,7 +4033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3f49548d9ef17408670630c2d66342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 3
+  buildingType: 5
 --- !u!1 &934969211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,7 +5383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3f49548d9ef17408670630c2d66342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 5
+  buildingType: 7
 --- !u!114 &1250220991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,7 +6112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3f49548d9ef17408670630c2d66342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 3
+  buildingType: 4
 --- !u!114 &1447519152
 MonoBehaviour:
   m_ObjectHideFlags: 0

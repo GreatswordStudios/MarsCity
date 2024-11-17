@@ -191,10 +191,19 @@ public class GridManager : MonoBehaviour
             case BuildingType.NUCLEAR:
                 returnBuilding = new NuclearBuilding();
                 break;
+            case BuildingType.NUCLEAR_2:
+                returnBuilding = new NuclearBuilding();
+                break;
+            case BuildingType.NUCLEAR_3:
+                returnBuilding = new NuclearBuilding();
+                break;
             case BuildingType.MINER:
                 returnBuilding = new MinerBuilding();
                 break;
             case BuildingType.HOUSING:
+                returnBuilding = new HousingBuilding();
+                break;
+            case BuildingType.HOUSING_2:
                 returnBuilding = new HousingBuilding();
                 break;
             case BuildingType.RESEARCH:

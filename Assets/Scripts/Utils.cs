@@ -32,22 +32,31 @@ public static class Utils
                 prefab = Resources.Load<GameObject>("Architecture/");
                 break;
             case BuildingType.WASTEPROCESS:
-                prefab = Resources.Load<GameObject>("Architecture/");
+                prefab = Resources.Load<GameObject>("Architecture/Recycling Plant");
                 break;
             case BuildingType.NUCLEAR:
-                prefab = Resources.Load<GameObject>("Architecture/Power Teir 1");
+                prefab = Resources.Load<GameObject>("Architecture/Power T1");
+                break;
+            case BuildingType.NUCLEAR_2:
+                prefab = Resources.Load<GameObject>("Architecture/Power T2");
+                break;
+            case BuildingType.NUCLEAR_3:
+                prefab = Resources.Load<GameObject>("Architecture/Power T3");
                 break;
             case BuildingType.MINER:
-                prefab = Resources.Load<GameObject>("Architecture/");
+                prefab = Resources.Load<GameObject>("Architecture/Mining Facility");
                 break;
             case BuildingType.HOUSING:
+                prefab = Resources.Load<GameObject>("Architecture/main HAB");
+                break;
+            case BuildingType.HOUSING_2:
                 prefab = Resources.Load<GameObject>("Architecture/Housing");
                 break;
             case BuildingType.RESEARCH:
-                prefab = Resources.Load<GameObject>("Architecture/");
+                prefab = Resources.Load<GameObject>("Architecture/Reasearch Lab");
                 break;
             case BuildingType.LANDING:
-                prefab = Resources.Load<GameObject>("Architecture/Landing Base");
+                prefab = Resources.Load<GameObject>("Architecture/Landing Pad");
                 break;
         }
 

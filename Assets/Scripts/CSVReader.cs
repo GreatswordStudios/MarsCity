@@ -38,6 +38,7 @@ public static class CSVReader
                 switch(values[0]) {
                     case "Housing":
                         SceneMgr.gameDesignValues.Add(BuildingType.HOUSING, ParseValues(values));
+                        SceneMgr.gameDesignValues.Add(BuildingType.HOUSING_2, ParseValues(values));
                         break;
                     case "Landing Base":
                         SceneMgr.gameDesignValues.Add(BuildingType.LANDING, ParseValues(values));
@@ -47,6 +48,8 @@ public static class CSVReader
                         break;
                     case "Nuclear Power Base":
                         SceneMgr.gameDesignValues.Add(BuildingType.NUCLEAR, ParseValues(values));
+                        SceneMgr.gameDesignValues.Add(BuildingType.NUCLEAR_2, ParseValues(values));
+                        SceneMgr.gameDesignValues.Add(BuildingType.NUCLEAR_3, ParseValues(values));
                         break;
                     case "Research Facility":
                         SceneMgr.gameDesignValues.Add(BuildingType.RESEARCH, ParseValues(values));
