@@ -13,13 +13,12 @@ public class TooltipSystem : MonoBehaviour
     public static void Show(string content, string header = "")
     {
         current.tooltip.SetText(content, header);
-        current.tooltip.gameObject.SetActive(true);
+        Show();
     }
 
     public static void Show(){
         current.tooltip.gameObject.SetActive(true);
-    
-
+        current.tooltip.MoveToMouse();
     }
 
     public static void Hide(){

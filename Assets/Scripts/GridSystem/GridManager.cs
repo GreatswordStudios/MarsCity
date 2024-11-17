@@ -49,6 +49,7 @@ public class GridManager : MonoBehaviour
             }
         }
 
+        ResetMaterials();
         // code if a building is currently being carried
         if(carriedBuilding != null) {
 
@@ -75,7 +76,30 @@ public class GridManager : MonoBehaviour
             }
         }
         else { // not carrying a building
-            
+            if (Input.GetKey(KeyCode.LeftShift)) {
+                int x = (int) selectedSpace.x;
+                int y = (int) selectedSpace.y;
+                GridSpace gridSpace = grid[x, y].GetComponent<GridSpace>();
+                if(!gridSpace.isProtected) {
+                    GameObject attachedBuilding = gridSpace.buildingObject;
+                    if(attachedBuilding != null){
+                        attachedBuilding.GetComponent<MeshRenderer>().material.color = Color.red;
+                    }
+
+                    if(Input.GetMouseButtonDown(0)) {
+                        DestroyBuilding(selectedSpace);
+                    }
+                }
+            }
+        }
+    }
+
+    public void ResetMaterials() {
+        foreach(GameObject gridSpace in grid) {
+            GameObject attachedBuilding = gridSpace.GetComponent<GridSpace>().buildingObject;
+            if(attachedBuilding != null) {
+                attachedBuilding.GetComponent<MeshRenderer>().material.color = Color.white;
+            }
         }
     }
 
@@ -87,25 +111,42 @@ public class GridManager : MonoBehaviour
         carriedBuilding = Instantiate(Utils.GetBuildingMeshFromEnum(buildingType));
     }
 
-    public void PlaceBuilding(Vector2 selectedSpace, BuildingType buildingType) {
-        if(!BuildingCanBePlaced(selectedSpace, carriedBuildingType)) return;
-        GameObject gridSpace = grid[(int) selectedSpace.x, (int) selectedSpace.y];
+    public void DestroyBuilding(Vector2 selectedSpace) {
+        int x = (int) selectedSpace.x;
+        int y = (int) selectedSpace.y;
+        
+        if(grid[x, y].GetComponent<GridSpace>().buildingObject == null) return; // nothing to delete
 
+        Destroy(grid[x, y].GetComponent<GridSpace>().buildingObject);
+        SceneMgr.singleton.DestroyBuilding(selectedSpace);
+
+        SceneMgr.singleton.buildingMats += -5;
+        TooltipSystem.Hide(); // tooltip will be on top of building and must be hidden
+    }
+
+    public void PlaceBuilding(Vector2 selectedSpace, BuildingType buildingType, bool isProtected = false) {
+        if(!BuildingCanBePlaced(selectedSpace, buildingType)) return;
+        
+        GameObject spawnedBuilding = Instantiate(Utils.GetBuildingMeshFromEnum(buildingType)); // create building (visual)
+        
         // place building placeholders
-        Building placedBuilding = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
+        Building placedBuilding = CreateBuildingFromEnum(buildingType); // create building (logical)
         int x, y;
-        for(int i = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeX"]; i++) {
-            for(int j = 0; j < SceneMgr.gameDesignValues[carriedBuildingType]["sizeY"]; j++) {
+        for(int i = 0; i < SceneMgr.gameDesignValues[buildingType]["sizeX"]; i++) {
+            for(int j = 0; j < SceneMgr.gameDesignValues[buildingType]["sizeY"]; j++) {
                 x = (int) selectedSpace.x + i;
                 y = (int) selectedSpace.y + j;
                 SceneMgr.singleton.buildings[x, y] = placedBuilding;
+                
+                GridSpace gridSpace = grid[x, y].GetComponent<GridSpace>();
+                gridSpace.buildingObject = spawnedBuilding;
+                gridSpace.isProtected = isProtected;
+                if(i == 0 && j == 0) { // only place building at location of first space
+                    spawnedBuilding.transform.position = gridSpace.transform.position;
+                }
             }
         }
 
-        GameObject spawnedBuilding = Instantiate(Utils.GetBuildingMeshFromEnum(buildingType));
-        spawnedBuilding.transform.position = gridSpace.transform.position;
-
-        gridSpace.GetComponent<GridSpace>().buildingObject = Instantiate(spawnedBuilding);
     }
 
     bool BuildingCanBePlaced(Vector2 selectedSpace, BuildingType buildingType) {

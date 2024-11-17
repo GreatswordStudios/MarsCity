@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class SceneMgr : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class SceneMgr : MonoBehaviour
     public float waste = 0;
     public float population = 0;
     public float availableWorkforce = 0;
+    public DateTime curDate = new DateTime(2100, 1, 1);
 
     public float totalDrainRateWater = 0;
     public float totalDrainRateElec = 0;
@@ -47,8 +49,8 @@ public class SceneMgr : MonoBehaviour
         biomass = 1;
         CSVReader.LoadDrainCSV();
 
-        GridManager.singleton.PlaceBuilding(gridSize / 2, BuildingType.LANDING);
-        GridManager.singleton.PlaceBuilding((gridSize / 2) - new Vector2(1, 0), BuildingType.HOUSING);
+        GridManager.singleton.PlaceBuilding(gridSize / 2, BuildingType.LANDING, true);
+        GridManager.singleton.PlaceBuilding((gridSize / 2) - new Vector2(1, 0), BuildingType.HOUSING, true);
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class SceneMgr : MonoBehaviour
         timeSinceLastTick += Time.deltaTime;
         if(timeSinceLastTick * tickMultiplier > tickTime) {
             TickAll();
-
+            curDate = curDate.AddDays(1);
             timeSinceLastTick = 0;
         }
     }
@@ -80,10 +82,14 @@ public class SceneMgr : MonoBehaviour
         }
 
         flattenedBuildings = Utils.Shuffle(flattenedBuildings);
+        List<Building> buildingsTicked = new List<Building>();
 
         foreach (Building building in flattenedBuildings) {
             if(building != null) {
-                building.Tick();
+                if(!buildingsTicked.Contains(building)){
+                    building.Tick();
+                    buildingsTicked.Add(building);
+                }
             }
         }
 
@@ -114,6 +120,23 @@ public class SceneMgr : MonoBehaviour
         elec -= gameDesignValues[BuildingType.POPULATION]["elec"] * population;
         buildingMats -= gameDesignValues[BuildingType.POPULATION]["buildingMats"] * population;
         waste -= gameDesignValues[BuildingType.POPULATION]["waste"] * population;
+    }
+
+    public void DestroyBuilding(Vector2 selectedSpace) {
+        int x = (int) selectedSpace.x;
+        int y = (int) selectedSpace.y;
+
+        Building building = buildings[x, y];
+
+        if(building != null) {
+            for(int i = 0; i < buildings.GetLength(0); i++){
+                for(int j = 0; j < buildings.GetLength(1); j++){
+                    if(buildings[j, i] == building) {
+                        buildings[j, i] = null;
+                    }
+                }
+            }
+        }
     }
 
     public static void SetTickMultiplier(float newTickMultiplier) {

@@ -7,6 +7,7 @@ public class GridSpace : MonoBehaviour
 {   
 
     public GameObject buildingObject;
+    public bool isProtected = false;
 
     // Start is called before the first frame update
     void Start()
