@@ -76,6 +76,10 @@ public class GridManager : MonoBehaviour
             }
         }
         else { // not carrying a building
+            if(Input.GetMouseButtonDown(0)) { // we close panel if not carrying and clicking
+                InventoryManager.CloseAllPanel();
+            }
+
             if (Input.GetKey(KeyCode.LeftShift)) {
                 int x = (int) selectedSpace.x;
                 int y = (int) selectedSpace.y;
