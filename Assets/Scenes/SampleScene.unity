@@ -156,10 +156,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -211.36375, y: 4.58992}
-  m_SizeDelta: {x: 20.521, y: 22.0688}
+  m_AnchorMin: {x: 0.089, y: 0.4693458}
+  m_AnchorMax: {x: 0.11742818, y: 0.62}
+  m_AnchoredPosition: {x: -1.3637695, y: -0.91007996}
+  m_SizeDelta: {x: 4.520996, y: 3.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7924288
 MonoBehaviour:
@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 70623281}
   - component: {fileID: 70623280}
   - component: {fileID: 70623279}
+  - component: {fileID: 70623283}
   - component: {fileID: 70623282}
   m_Layer: 5
   m_Name: Waste Button
@@ -749,6 +750,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuToToggle: {fileID: 1527644349}
+--- !u!114 &70623283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70623277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Waste Production
+  content: Astronauts are familiar with bodily wastes and waste biomass can be converted
+    into useable material for agriculture and recycled back to ease net water loss.
+    Costs 15 kT of Materials to make and 5 employees to run. Consumes 0.4617 MJ of
+    power, 0.12 ML of Oxygen and can collect up to 1.5 kT of biowaste daily. Produces
+    0.0167 ML of water and 0.0667 kT of Agricultural Biomass.
 --- !u!1 &86384095
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,10 +801,10 @@ RectTransform:
   - {fileID: 1083285757}
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16651538, y: 0.055749133}
-  m_AnchorMax: {x: 0.23182821, y: 0.35756925}
-  m_AnchoredPosition: {x: 130.8, y: 62.054}
-  m_SizeDelta: {x: 9.9902, y: 7.6749}
+  m_AnchorMin: {x: 0.4074282, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.88400006}
+  m_AnchoredPosition: {x: -3.6591797, y: 1.5539398}
+  m_SizeDelta: {x: -5.009796, y: -1.3251038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86384097
 MonoBehaviour:
@@ -964,10 +983,10 @@ RectTransform:
   - {fileID: 1522075488}
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16651538, y: 0.055749133}
-  m_AnchorMax: {x: 0.23182821, y: 0.35756925}
-  m_AnchoredPosition: {x: 264.7, y: 60.9}
-  m_SizeDelta: {x: 9.9902, y: 7.6749}
+  m_AnchorMin: {x: 0.63632107, y: 0.5}
+  m_AnchorMax: {x: 0.7194281, y: 0.88400006}
+  m_AnchoredPosition: {x: 0.4000244, y: -0.1000061}
+  m_SizeDelta: {x: -0.009796143, y: -2.3251038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172619640
 MonoBehaviour:
@@ -1406,6 +1425,7 @@ GameObject:
   - component: {fileID: 230505827}
   - component: {fileID: 230505826}
   - component: {fileID: 230505825}
+  - component: {fileID: 230505829}
   - component: {fileID: 230505828}
   m_Layer: 5
   m_Name: Miner Button
@@ -1541,6 +1561,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuToToggle: {fileID: 831007179}
+--- !u!114 &230505829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230505823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Drills 2
+  content: This building will greatly generate the needed building materials needed
+    for life on Mars. Additionally our cranes can drill for water ice stored inside
+    the Martian Crust. Costs 2 kT of materials to build and requires 2 employees
+    to operate. Costs 0.625 MJ of power per day. Produces 0.5 kT of Building Materials
+    and 0.04 ML of water daily.
 --- !u!1 &235525819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,10 +1714,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89.437, y: -24.647}
-  m_SizeDelta: {x: 32.6985, y: 32.699}
+  m_AnchorMin: {x: 0.29753524, y: 0.17400001}
+  m_AnchorMax: {x: 0.35832116, y: 0.5}
+  m_AnchoredPosition: {x: 1.5629883, y: -4.1469994}
+  m_SizeDelta: {x: 0.6985016, y: -8.300999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303045057
 MonoBehaviour:
@@ -1827,10 +1865,10 @@ RectTransform:
   - {fileID: 1537626170}
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16651538, y: 0.055749133}
-  m_AnchorMax: {x: 0.23182821, y: 0.35756925}
-  m_AnchoredPosition: {x: 263.1, y: 11.453011}
-  m_SizeDelta: {x: 9.9902, y: 7.6749}
+  m_AnchorMin: {x: 0.63632107, y: 0.11800001}
+  m_AnchorMax: {x: 0.7194281, y: 0.4693458}
+  m_AnchoredPosition: {x: -0.39996338, y: 0.45298767}
+  m_SizeDelta: {x: -0.009796143, y: 1.6749}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &394683950
 MonoBehaviour:
@@ -2157,10 +2195,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172.7, y: -25.800991}
-  m_SizeDelta: {x: 32.6985, y: 32.699}
+  m_AnchorMin: {x: 0.79510707, y: 0.17400001}
+  m_AnchorMax: {x: 0.85757196, y: 0.42942563}
+  m_AnchoredPosition: {x: 0.2000122, y: -0.80281067}
+  m_SizeDelta: {x: -0.3014984, y: 0.6990013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531550572
 MonoBehaviour:
@@ -2454,8 +2492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header: Hello WOrld
-  content: 
+  header: Greenhouse
+  content: This building is essential for providing crops and needed Oxygen to the
+    denizens of Mars. Although we do know that it comes with a sizeable water budget
+    it is necessary for life on mars to thrive.   Costs 80 kT of Material to make.
+    Reuires 10 employees to operate. Consumes 0.04 ML of water and 0.625 MJ of power
+    daily. Will produce 0.1 population, 2.5 ML of Oxygen and 0.5 kT of Biomass daily.
 --- !u!1 &638162237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2837,7 @@ GameObject:
   - component: {fileID: 679016402}
   - component: {fileID: 679016401}
   - component: {fileID: 679016400}
+  - component: {fileID: 679016404}
   - component: {fileID: 679016403}
   m_Layer: 5
   m_Name: Nuclear Button
@@ -2930,6 +2973,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuToToggle: {fileID: 30197447}
+--- !u!114 &679016404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679016398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Nuclear Base
+  content: This prototypical design was originally used for Lunar missions. We need
+    a sizeable array of them to produce meaningful power for the colony, however.
+    Costs 40 building materials to make and requires 30 employees to operate. Produces
+    1.04 MJ of power daily. Consumes 0.167 ML of water daily.
 --- !u!1 &700384861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,6 +3235,7 @@ GameObject:
   - component: {fileID: 735836382}
   - component: {fileID: 735836381}
   - component: {fileID: 735836380}
+  - component: {fileID: 735836384}
   - component: {fileID: 735836383}
   m_Layer: 5
   m_Name: Housing Button
@@ -3310,6 +3371,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuToToggle: {fileID: 175661145}
+--- !u!114 &735836384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735836378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Housing Base
+  content: The first home away from home. Consumes 0.03 ML of Oxygen, 0.208 MJ of
+    power, 1.667 kT of Agricultrual Biomass daily. Produces 0.1 population, and 1.67
+    kT of Biomass waste every day.
 --- !u!1 &766116186
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,10 +3701,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89.04523, y: 23.322083}
-  m_SizeDelta: {x: 33.4816, y: 31.3398}
+  m_AnchorMin: {x: 0.29753524, y: 0.572}
+  m_AnchorMax: {x: 0.35832116, y: 0.81200004}
+  m_AnchoredPosition: {x: 1.954773, y: -0.6779175}
+  m_SizeDelta: {x: 1.4815979, y: 1.3397999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812196572
 MonoBehaviour:
@@ -3802,10 +3879,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.854797, y: 22.16809}
-  m_SizeDelta: {x: 33.4816, y: 31.3398}
+  m_AnchorMin: {x: 0.552893, y: 0.54800004}
+  m_AnchorMax: {x: 0.62100005, y: 0.81200004}
+  m_AnchoredPosition: {x: -1.1452026, y: -0.33190918}
+  m_SizeDelta: {x: -2.5183983, y: -1.6602001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863833487
 MonoBehaviour:
@@ -3878,10 +3955,10 @@ RectTransform:
   - {fileID: 1189090650}
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16651538, y: 0.055749133}
-  m_AnchorMax: {x: 0.23182821, y: 0.35756925}
-  m_AnchoredPosition: {x: 391.33704, y: 11.453011}
-  m_SizeDelta: {x: 9.9902, y: 7.6749}
+  m_AnchorMin: {x: 0.8861071, y: 0.11800001}
+  m_AnchorMax: {x: 0.9654649, y: 0.5}
+  m_AnchoredPosition: {x: -1.395874, y: -1.5508804}
+  m_SizeDelta: {x: 1.9902039, y: -2.3251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871740876
 MonoBehaviour:
@@ -4156,6 +4233,7 @@ GameObject:
   - component: {fileID: 957488806}
   - component: {fileID: 957488805}
   - component: {fileID: 957488804}
+  - component: {fileID: 957488808}
   - component: {fileID: 957488807}
   m_Layer: 5
   m_Name: Solar Button
@@ -4291,6 +4369,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuToToggle: {fileID: 35643455}
+--- !u!114 &957488808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957488802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Solar Panal
+  content: Since Mars has much weaker sunlight than on Earth, we need to create a
+    great tower that concentrates the sun's rays to an extreme amount to produce
+    sufficient power for a colony. Requires 10 kT of building materials to create
+    and 3 employees to operate. Produces 0.0417 MJ of power daily.
 --- !u!1 &992301944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4457,10 +4552,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 173.0918, y: 22.16809}
-  m_SizeDelta: {x: 33.4816, y: 31.3398}
+  m_AnchorMin: {x: 0.79510707, y: 0.572}
+  m_AnchorMax: {x: 0.85, y: 0.772}
+  m_AnchoredPosition: {x: 2.5917969, y: 0.6680908}
+  m_SizeDelta: {x: 4.481598, y: 6.3398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993878967
 MonoBehaviour:
@@ -4512,6 +4607,7 @@ GameObject:
   - component: {fileID: 1004358257}
   - component: {fileID: 1004358256}
   - component: {fileID: 1004358255}
+  - component: {fileID: 1004358259}
   - component: {fileID: 1004358258}
   m_Layer: 5
   m_Name: Research Button
@@ -4537,7 +4633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1216303, y: 0.108}
   m_AnchorMax: {x: 0.9096637, y: 0.15123574}
-  m_AnchoredPosition: {x: -1.9998932, y: -6.5000153}
+  m_AnchoredPosition: {x: -1.9998932, y: -6.5000305}
   m_SizeDelta: {x: 8, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004358255
@@ -4647,6 +4743,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuToToggle: {fileID: 235525819}
+--- !u!114 &1004358259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004358253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d61d85380f0ae4c9e3caaa28541936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Research Facility
+  content: The power of science in space is unending. Astronauts need to work. Astronauts
+    also need to improve better buildings for resource collection. Costs 30 kT of
+    building materials to make, 30 employees to operate. Consumes 0.208 kJ of power
+    and 0.12 ML of Oxygen daily. Produces 0.0333 kT of Biowaste daily.
 --- !u!1 &1007878918
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,7 +5000,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1916468, y: 0.21200001}
   m_AnchorMax: {x: 0.9764174, y: 0.6833693}
-  m_AnchoredPosition: {x: 17.9, y: 2.4068}
+  m_AnchoredPosition: {x: 10.2, y: 2.4068}
   m_SizeDelta: {x: 36.8714, y: 0.9281}
   m_Pivot: {x: 0.42987645, y: 0.5}
 --- !u!114 &1083285758
@@ -4937,15 +5050,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 32
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4973,7 +5086,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 35.495968, w: 0}
+  m_margin: {x: 3.8672638, y: 0, z: 35.495968, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5489,10 +5602,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1375786525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1916468, y: 0.21200001}
-  m_AnchorMax: {x: 0.9764174, y: 0.6833693}
-  m_AnchoredPosition: {x: 17.9, y: 2.4068}
-  m_SizeDelta: {x: 36.8714, y: 0.9281}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 13.4, y: -1.5999985}
+  m_SizeDelta: {x: 26.871399, y: -24.0719}
   m_Pivot: {x: 0.42987645, y: 0.5}
 --- !u!114 &1279615421
 MonoBehaviour:
@@ -5541,15 +5654,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 32
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5577,7 +5690,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 35.495968, w: 0}
+  m_margin: {x: 3.8672638, y: 0, z: 35.495968, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5970,10 +6083,10 @@ RectTransform:
   - {fileID: 1279615420}
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16651538, y: 0.055749133}
-  m_AnchorMax: {x: 0.23182821, y: 0.35756925}
-  m_AnchoredPosition: {x: 129.2, y: 12.607}
-  m_SizeDelta: {x: 9.9902, y: 7.6749}
+  m_AnchorMin: {x: 0.4074282, y: 0.17400001}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -5.104187, y: -3.8951416}
+  m_SizeDelta: {x: -5.009796, y: 4.6749}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375786526
 MonoBehaviour:
@@ -7880,10 +7993,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231.88474, y: 4.589941}
-  m_SizeDelta: {x: 20.521, y: 22.0688}
+  m_AnchorMin: {x: 0.041535232, y: 0.4693458}
+  m_AnchorMax: {x: 0.073642276, y: 0.62}
+  m_AnchoredPosition: {x: 1.6152344, y: -0.91004944}
+  m_SizeDelta: {x: 3.520996, y: 3.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1859508195
 SpriteRenderer:
@@ -8078,10 +8191,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.32178, y: 4.589924}
-  m_SizeDelta: {x: 20.521, y: 22.0688}
+  m_AnchorMin: {x: 0.16651538, y: 0.4693458}
+  m_AnchorMax: {x: 0.19210705, y: 0.62}
+  m_AnchoredPosition: {x: -0.32177734, y: -0.91007996}
+  m_SizeDelta: {x: 6.520996, y: 3.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883950992
 MonoBehaviour:
@@ -8531,10 +8644,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.463013, y: -25.800991}
-  m_SizeDelta: {x: 32.6985, y: 32.699}
+  m_AnchorMin: {x: 0.552893, y: 0.17400001}
+  m_AnchorMax: {x: 0.6134282, y: 0.42942563}
+  m_AnchoredPosition: {x: 0.4630127, y: -0.80280304}
+  m_SizeDelta: {x: 0.6985016, y: 0.6990013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959386103
 MonoBehaviour:
@@ -8848,10 +8961,10 @@ RectTransform:
   - {fileID: 766116187}
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16651538, y: 0.055749133}
-  m_AnchorMax: {x: 0.23182821, y: 0.35756925}
-  m_AnchoredPosition: {x: 392.937, y: 60.900005}
-  m_SizeDelta: {x: 9.9902, y: 7.6749}
+  m_AnchorMin: {x: 0.8861071, y: 0.5}
+  m_AnchorMax: {x: 0.9654649, y: 0.86}
+  m_AnchoredPosition: {x: -0.29992676, y: 1.3999939}
+  m_SizeDelta: {x: 1.9902039, y: 0.67490005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986031625
 MonoBehaviour:
@@ -9274,10 +9387,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 103552223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190.84276, y: 4.589943}
-  m_SizeDelta: {x: 20.521, y: 22.0688}
+  m_AnchorMin: {x: 0.12685637, y: 0.4693458}
+  m_AnchorMax: {x: 0.15710706, y: 0.62}
+  m_AnchoredPosition: {x: -0.84277344, y: -0.91004944}
+  m_SizeDelta: {x: 4.520996, y: 3.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122412404
 MonoBehaviour:
