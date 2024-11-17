@@ -95,7 +95,7 @@ public class GridManager : MonoBehaviour
         Building placedBuilding = CreateBuildingFromEnum(carriedBuildingType); // create building (logical)
         int x, y;
         for(int i = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeX"]; i++) {
-            for(int j = 0; i < SceneMgr.gameDesignValues[carriedBuildingType]["sizeY"]; i++) {
+            for(int j = 0; j < SceneMgr.gameDesignValues[carriedBuildingType]["sizeY"]; j++) {
                 x = (int) selectedSpace.x + i;
                 y = (int) selectedSpace.y + j;
                 SceneMgr.singleton.buildings[x, y] = placedBuilding;
