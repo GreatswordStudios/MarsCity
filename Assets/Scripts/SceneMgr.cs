@@ -20,7 +20,7 @@ public class SceneMgr : MonoBehaviour
     public float waste = 0;
     public float population = 0;
     public float availableWorkforce = 0;
-    public DateTime curDate = new DateTime(2100);
+    public DateTime curDate = new DateTime(2100, 1, 1);
 
     public float totalDrainRateWater = 0;
     public float totalDrainRateElec = 0;
@@ -59,7 +59,7 @@ public class SceneMgr : MonoBehaviour
         timeSinceLastTick += Time.deltaTime;
         if(timeSinceLastTick * tickMultiplier > tickTime) {
             TickAll();
-            curDate.AddDays(1);
+            curDate = curDate.AddDays(1);
             timeSinceLastTick = 0;
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public enum KPI{
     WATER,
@@ -10,7 +11,8 @@ public enum KPI{
     AGRICULTURE,
     WASTE,
     POWER,
-    BUILDINGMATERIALS
+    BUILDINGMATERIALS,
+    DATE
 }
 public class KPIMoniter : MonoBehaviour
 {
@@ -58,7 +60,14 @@ public class KPIMoniter : MonoBehaviour
                 break;    
         }
 
-        GetComponent<TMP_Text>().text = curAmount.ToString("n2") + "(" + changeAmount.ToString("n2") + ")";
+        
+
+        if(moniterType == KPI.DATE) {
+            GetComponent<TMP_Text>().text = String.Format("{0:M/d/yyyy}", SceneMgr.singleton.curDate);
+        }
+        else {
+            GetComponent<TMP_Text>().text = curAmount.ToString("n2") + "(" + changeAmount.ToString("n2") + ")";
+        }
         
     }
 }
