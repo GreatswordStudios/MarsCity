@@ -133,7 +133,6 @@ public class GridManager : MonoBehaviour
         int x, y;
         for(int i = 0; i < SceneMgr.gameDesignValues[buildingType]["sizeX"]; i++) {
             for(int j = 0; j < SceneMgr.gameDesignValues[buildingType]["sizeY"]; j++) {
-                Debug.Log(i + "," + j);
                 x = (int) selectedSpace.x + i;
                 y = (int) selectedSpace.y + j;
                 SceneMgr.singleton.buildings[x, y] = placedBuilding;

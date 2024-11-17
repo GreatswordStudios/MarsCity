@@ -82,10 +82,14 @@ public class SceneMgr : MonoBehaviour
         }
 
         flattenedBuildings = Utils.Shuffle(flattenedBuildings);
+        List<Building> buildingsTicked = new List<Building>();
 
         foreach (Building building in flattenedBuildings) {
             if(building != null) {
-                building.Tick();
+                if(!buildingsTicked.Contains(building)){
+                    building.Tick();
+                    buildingsTicked.Add(building);
+                }
             }
         }
 

@@ -9,7 +9,6 @@ public class LandingBuilding : Building
     public void Tick() {
         Dictionary<string, float> drain = SceneMgr.gameDesignValues[BuildingType.LANDING];
         SceneMgr sceneMgr = SceneMgr.singleton;
-
         if( sceneMgr.availableWorkforce >= drain["populationCost"]) {
             
             sceneMgr.water -= drain["water"];
