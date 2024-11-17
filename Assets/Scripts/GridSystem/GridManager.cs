@@ -104,7 +104,7 @@ public class GridManager : MonoBehaviour
         // check size
         int x, y;
         for(int i = 0; i < SceneMgr.gameDesignValues[buildingType]["sizeX"]; i++) {
-            for(int j = 0; i < SceneMgr.gameDesignValues[buildingType]["sizeY"]; i++) {
+            for(int j = 0; j < SceneMgr.gameDesignValues[buildingType]["sizeY"]; j++) {
                 x = (int) selectedSpace.x + i;
                 y = (int) selectedSpace.y + j;
                 if(x > SceneMgr.singleton.buildings.GetLength(0) || y > SceneMgr.singleton.buildings.GetLength(1) || SceneMgr.singleton.buildings[x, y] != null) {
