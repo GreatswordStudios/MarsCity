@@ -3399,8 +3399,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon/3ef5f0ccd711bf449a0bb9ebd44221da"
 				poiLight.lightMapNoAttenuation = poiLight.lightMap;
 				poiLight.lightMap *= lerp(1, poiLight.additiveShadow, poiLight.attenuationStrength);
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03298241,0.8002997,0.1309146,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.03298241,0.8002997,0.1309146,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, _Color.rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * _Color.a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -6320,8 +6320,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon/3ef5f0ccd711bf449a0bb9ebd44221da"
 				poiLight.lightMapNoAttenuation = poiLight.lightMap;
 				poiLight.lightMap *= lerp(1, poiLight.additiveShadow, poiLight.attenuationStrength);
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03298241,0.8002997,0.1309146,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.03298241,0.8002997,0.1309146,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, _Color.rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * _Color.a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -8349,8 +8349,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon/3ef5f0ccd711bf449a0bb9ebd44221da"
 				poiCam.vDotN = abs(dot(poiCam.viewDir, poiMesh.normals[1]));
 				poiCam.worldDirection.xyz = poiMesh.worldPos.xyz - poiCam.worldPos;
 				poiCam.worldDirection.w = dot(poiCam.clipPos, CalculateFrustumCorrection());
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(0.03298241,0.8002997,0.1309146,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(0.03298241,0.8002997,0.1309146,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, _Color.rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * _Color.a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{

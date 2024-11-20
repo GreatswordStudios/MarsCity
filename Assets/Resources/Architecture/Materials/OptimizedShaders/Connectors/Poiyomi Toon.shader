@@ -3560,8 +3560,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon/7d4354fa1fa861f49b7628ecf310906e"
 				#if defined(MOCHIE_PBR)
 				MetallicAndSpecularFragDataInit(poiFragData, poiMesh, poiMods);
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, _Color.rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * _Color.a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -6835,8 +6835,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon/7d4354fa1fa861f49b7628ecf310906e"
 				#if defined(MOCHIE_PBR)
 				MetallicAndSpecularFragDataInit(poiFragData, poiMesh, poiMods);
 				#endif
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, _Color.rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * _Color.a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{
@@ -8869,8 +8869,8 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Toon/7d4354fa1fa861f49b7628ecf310906e"
 				poiCam.vDotN = abs(dot(poiCam.viewDir, poiMesh.normals[1]));
 				poiCam.worldDirection.xyz = poiMesh.worldPos.xyz - poiCam.worldPos;
 				poiCam.worldDirection.w = dot(poiCam.clipPos, CalculateFrustumCorrection());
-				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, float4(1,1,1,1).rgb, (0.0 /*_ColorThemeIndex*/));
-				poiFragData.alpha = mainTexture.a * float4(1,1,1,1).a;
+				poiFragData.baseColor = mainTexture.rgb * poiThemeColor(poiMods, _Color.rgb, (0.0 /*_ColorThemeIndex*/));
+				poiFragData.alpha = mainTexture.a * _Color.a;
 				#if defined(PROP_ALPHAMASK) || !defined(OPTIMIZER_ENABLED)
 				if ((2.0 /*_MainAlphaMaskMode*/))
 				{

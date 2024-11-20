@@ -31,6 +31,7 @@ Material:
     OriginalShader: .poiyomi/Poiyomi Toon
     OriginalShaderGUID: 23f6705aff8bf964c87bfb3dd66ab345
     RenderType: Opaque
+    _ColorAnimated: 1
     _MochieMetallicMaps_texPack_a_channel: 4
     _MochieMetallicMaps_texPack_a_fallback: 1
     _MochieMetallicMaps_texPack_a_inverted: False
